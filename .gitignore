@@ -121,3 +121,6 @@ out
 
 !backend/config/db.js
 
+# Allow environment files for deployment
+!src/environments/environment.ts
+!src/environments/environment.prod.ts

@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors'); // ✅ Import cors
+const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
@@ -11,10 +11,23 @@ connectDB();
 
 const app = express();
 
-// ✅ Enable CORS
+// ✅ Updated CORS to allow both localhost and Vercel domain
+const allowedOrigins = [
+  'http://localhost:4200',
+  'https://task-manager-fullstock.vercel.app'
+];
+
 app.use(cors({
-  origin: 'http://localhost:4200', // allow requests from your frontend
-  credentials: true // optional if using cookies or auth headers
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like Postman, curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
 
 app.use(express.json());

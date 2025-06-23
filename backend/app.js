@@ -7,7 +7,7 @@ const authRoutes = require('./routes/auth.routes');
 const taskRoutes = require('./routes/task.routes');
 
 dotenv.config();
-connectDB();
+
 
 const app = express();
 

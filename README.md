@@ -14,8 +14,6 @@ This project compares:
 | Slower with many UI updates      | Snappy and predictable             |
 | Harder to debug performance      | Visual tools + control             |
 
-This helps employers or freelance clients see **why you're the right developer** for scalable and modern Angular apps.
-
 ---
 
 ## 🧩 Features

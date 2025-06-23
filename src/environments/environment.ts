@@ -1,5 +1,5 @@
  export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000/api' // Backend base URL
+  apiUrl: 'https://task-manager-fullstock.onrender.com/api' // Backend base URL
 };
 
